@@ -1,0 +1,5 @@
+.bg-dots {
+  background-image: url('../../images/bg-dots.svg');
+  background-repeat: repeat-x;
+  background-position-y: 260px;
+}

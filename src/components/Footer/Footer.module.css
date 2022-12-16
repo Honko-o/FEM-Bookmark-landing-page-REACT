@@ -1,0 +1,23 @@
+.footer {
+  background-color: hsl(var(--soft-blue));
+}
+
+.footer span,
+.footer p {
+  color: white;
+  letter-spacing: 0.2rem;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .footer p {
+    width: 50%;
+  }
+}
+
+.footer-nav {
+  background-color: hsl(var(--dark-blue-900));
+}

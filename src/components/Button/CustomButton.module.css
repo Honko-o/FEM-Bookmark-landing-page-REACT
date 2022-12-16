@@ -1,0 +1,43 @@
+.btn {
+  border: 2px solid;
+  border-radius: 0.375rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  font-weight: 500;
+}
+.primary-btn {
+  border-color: hsl(var(--soft-blue));
+  background-color: hsl(var(--soft-blue));
+  color: white;
+}
+.primary-btn:hover,
+.primary-btn:focus,
+.primary-btn:active {
+  border-color: hsl(var(--soft-blue));
+  background-color: white;
+  color: hsl(var(--soft-blue));
+}
+.login-btn {
+  border-color: hsl(var(--soft-red));
+  background-color: hsl(var(--soft-red));
+  color: white;
+}
+
+.login-btn:hover,
+.login-btn:focus,
+.login-btn:active {
+  border-color: hsl(var(--soft-red));
+  background-color: white;
+  color: hsl(var(--soft-red));
+}
+
+.default-btn {
+  border-color: #eee;
+  background-color: #eee;
+  color: hsl(var(--dark-blue-900));
+}
+.default-btn:hover,
+.default-btn:focus,
+.default-btn:active {
+  background-color: white;
+  color: hsl(var(--gray-blue));
+}

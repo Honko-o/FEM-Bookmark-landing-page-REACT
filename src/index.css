@@ -1,0 +1,93 @@
+:root {
+  /* Primary */
+  --soft-blue: 231, 69%, 60%;
+  --soft-red: 0, 94%, 66%;
+  /* Neutral */
+  --gray-blue: 229, 8%, 60%;
+  --dark-blue-900: 229, 31%, 21%;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  /* 18px Default */
+  font-size: 1.125rem;
+  font-family: 'Rubik', sans-serif;
+  min-height: 100vh;
+}
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+button {
+  all: unset;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Bootstrap Override */
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler-icon {
+  background-image: url('./images/icon-hamburger.svg');
+  width: 20px;
+  height: 20px;
+}
+.accordion-button::after {
+  background-image: url('./images/icon-arrow.svg');
+}
+/* filter: invert(52%) sepia(9%) saturate(4733%) hue-rotate(317deg) brightness(99%) contrast(98%); */
+.accordion-button:not(.collapsed) {
+  --bs-accordion-active-bg: hsla(var(--soft-red), 0.1);
+  --bs-accordion-active-color: hsl(var(--soft-red));
+}
+.accordion-button:not(.collapsed)::after {
+  filter: invert(52%) sepia(9%) saturate(4733%) hue-rotate(317deg)
+    brightness(99%) contrast(98%);
+  --bs-accordion-active-bg: hsla(var(--soft-red), 0.95);
+  background-image: url('./images/icon-arrow.svg');
+}
+.accordion-button:focus {
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem hsla(var(--soft-red), 0.5);
+  border-color: hsl(var(--soft-red));
+}
+/* utils */
+.flex-equal {
+  flex: 50%;
+}
+@media (max-width: 768px) {
+  .text-center-sm-md {
+    text-align: center;
+  }
+}
+.color-gray-blue {
+  color: hsl(var(--gray-blue));
+}
+.color-dark-blue-900 {
+  color: hsl(var(--dark-blue-900));
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
+
+/* Transition Stuff Later */
