@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.8d53ae73.css",
-    "main.js": "./static/js/main.5a1b767b.js",
+    "main.js": "./static/js/main.313c329d.js",
     "static/media/illustration-features-tab-3.svg": "./static/media/illustration-features-tab-3.a4206aab7946773b29b702492d2d014b.svg",
     "static/media/illustration-features-tab-2.svg": "./static/media/illustration-features-tab-2.e933bd6d921c537d7743e08ea4ec488e.svg",
     "static/media/illustration-hero.svg": "./static/media/illustration-hero.07801d05cb11930f0c826add8c05ce22.svg",
@@ -18,10 +18,10 @@
     "static/media/icon-hamburger.svg": "./static/media/icon-hamburger.4385fd507d24f37ccbb3.svg",
     "static/media/icon-arrow.svg": "./static/media/icon-arrow.8174203a5d4fc44f5247.svg",
     "main.8d53ae73.css.map": "./static/css/main.8d53ae73.css.map",
-    "main.5a1b767b.js.map": "./static/js/main.5a1b767b.js.map"
+    "main.313c329d.js.map": "./static/js/main.313c329d.js.map"
   },
   "entrypoints": [
     "static/css/main.8d53ae73.css",
-    "static/js/main.5a1b767b.js"
+    "static/js/main.313c329d.js"
   ]
 }
