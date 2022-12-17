@@ -18,24 +18,24 @@ const Installation = () => {
           you've got a favorite you'd like us to prioritize.`}
       />
       <Container>
-        <Row className="text-center gap-5 gap-md-0 py-5">
+        <Row className={`${styles.row} text-center gap-5 gap-md-0 py-5`}>
           <Col xs={12} md={4}>
             <BrowserCard
-              className={`${styles['bg-dots']}`}
+              className={`${styles['bg-dots']} shadow`}
               version="Minimum version 62"
               src={chromeLogo}
             />
           </Col>
           <Col xs={12} md={4}>
             <BrowserCard
-              className={`${styles['bg-dots']}`}
+              className={`${styles['bg-dots']} shadow`}
               version="Minimum version 55"
               src={firefoxLogo}
             />
           </Col>
           <Col xs={12} md={4}>
             <BrowserCard
-              className={`${styles['bg-dots']}`}
+              className={`${styles['bg-dots']} shadow`}
               version="Minimum version 46"
               src={operaLogo}
             />

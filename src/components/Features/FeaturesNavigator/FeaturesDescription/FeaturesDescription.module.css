@@ -1,9 +1,0 @@
-.features-description::before {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  width: 80%;
-  height: 80%;
-  background-color: hsl(var(--soft-blue));
-  z-index: -1;
-}

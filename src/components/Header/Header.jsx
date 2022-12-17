@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react';
-
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import logoBookmark from '../../images/logo-bookmark.svg';
+import Menu from './Menu';
+import Nav from 'react-bootstrap/Nav';
 import CustomButton from '../Button/CustomButton';
 
 function Header() {
-  const [show, setShow] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const showMenuHandler = () => {
+    setShowMenu(true);
+    document.body.style.overflowY = 'hidden';
+  };
 
-  useEffect(() => {
-    const idIndex = document.URL.indexOf('#');
-    const id = document.URL.slice(idIndex);
-    document.querySelector(id).scrollIntoView();
-  }, [show]);
+  const hideMenuHandler = () => {
+    setShowMenu(false);
+    document.body.removeAttribute('style');
+  };
 
   return (
     <Navbar bg="light" expand={'md'}>
@@ -25,38 +25,33 @@ function Header() {
         <Navbar.Brand href="#home">
           <img src={logoBookmark} alt="website logo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" />
-        <Navbar.Offcanvas
-          onHide={handleClose}
-          onShow={handleShow}
-          id={`offcanvasNavbar-expand-md`}
-          aria-labelledby={`offcanvasNavbarLabel-expand-md`}
-          placement="end"
-        >
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
-              Offcanvas
-            </Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav className="justify-content-end align-items-center gap-3 flex-grow-1 pe-3">
-              <Nav.Link href="#features" className="text-uppercase">
-                features
-              </Nav.Link>
-              <Nav.Link href="#installation" className="text-uppercase">
-                pricing
-              </Nav.Link>
-              <Nav.Link href="#contact" className="text-uppercase">
-                contact
-              </Nav.Link>
-              <Nav.Link href="#action4" className="text-uppercase">
-                <CustomButton type="login" className="px-4 py-2">
-                  login
-                </CustomButton>
-              </Nav.Link>
-            </Nav>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
+        <Navbar.Toggle
+          onClick={showMenuHandler}
+          aria-controls="offcanvasNavbar-expand-md"
+        />
+        <Nav className="ms-auto d-none d-md-flex align-items-center gap-3">
+          <Nav.Link href="#features" className="text-uppercase">
+            Features
+          </Nav.Link>
+          <Nav.Link href="#installation" className="text-uppercase">
+            Pricing
+          </Nav.Link>
+          <Nav.Link href="#contact" className="text-uppercase">
+            Contact
+          </Nav.Link>
+          <Nav.Link href="#" className="text-uppercase">
+            <CustomButton type="login" className="px-4 py-2">
+              Contact
+            </CustomButton>
+          </Nav.Link>
+        </Nav>
+        {showMenu ? (
+          <Menu
+            hideMenuHandler={hideMenuHandler}
+            showMenuHandler={showMenuHandler}
+            showMenu={showMenu}
+          />
+        ) : null}
       </Container>
     </Navbar>
   );

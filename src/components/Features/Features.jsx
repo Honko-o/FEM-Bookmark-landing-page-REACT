@@ -1,9 +1,9 @@
 import styles from './Features.module.css';
 import FeaturesNavigator from './FeaturesNavigator/FeaturesNavigator';
-import FeaturesDescription from './FeaturesNavigator/FeaturesDescription/FeaturesDescription';
 import Title from '../Title/Title';
+import FeatureWrapper from './FeaturesNavigator/FeatureWrapper/FeatureWrapper';
 
-const Features = () => {
+const Features = ({ setActiveIndex }) => {
   return (
     <section id="features" className={`features mt-5 ${styles['mb-5']}`}>
       <Title
@@ -13,8 +13,8 @@ const Features = () => {
         websites. Your bookmarks sync between your devices so you can access
         them on the go.`}
       />
-      <FeaturesNavigator />
-      <FeaturesDescription />
+      <FeaturesNavigator setActiveIndex={setActiveIndex} />
+      <FeatureWrapper />
     </section>
   );
 };

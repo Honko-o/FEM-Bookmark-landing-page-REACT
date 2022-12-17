@@ -10,6 +10,16 @@
 
 .footer a {
   text-decoration: none;
+  transition: all 0.25s;
+}
+.footer a:hover {
+  color: hsl(var(--soft-red)) !important;
+}
+.footer svg path {
+  transition: all 0.25s;
+}
+.footer svg:hover path {
+  fill: hsl(var(--soft-red));
 }
 
 @media (min-width: 768px) {

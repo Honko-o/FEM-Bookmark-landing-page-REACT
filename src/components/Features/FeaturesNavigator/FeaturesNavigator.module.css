@@ -1,5 +1,10 @@
 .features-navigator-li {
   border-bottom: 1px solid hsl(var(--gray-blue));
+  transition: all 0.25s;
+}
+.features-navigator-li:not(.features-navigator-ul-active):focus,
+.features-navigator-li:not(.features-navigator-ul-active):hover {
+  color: hsl(var(--soft-red));
 }
 .features-navigator-btn {
   padding: 1.2rem;
@@ -8,11 +13,11 @@
   border-bottom: 2px solid #eee;
   width: fit-content;
 }
-.features-navigator-btn-active {
+.features-navigator-li-active {
   font-weight: 500;
 }
 
-.features-navigator-btn-active::after {
+.features-navigator-li-active::after {
   content: '';
   width: 70%;
   height: 4px;

@@ -22,7 +22,7 @@ const Faq = () => {
             quis quam ornare mattis.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey="1">
+        <Accordion.Item eventKey="1" className={``}>
           <Accordion.Header style={{ width: '95%' }}>
             How can I request a new browser?
           </Accordion.Header>
@@ -35,7 +35,7 @@ const Faq = () => {
             imperdiet.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey="2">
+        <Accordion.Item eventKey="2" className={``}>
           <Accordion.Header style={{ width: '95%' }}>
             Is there a mobile app?
           </Accordion.Header>
@@ -46,7 +46,7 @@ const Faq = () => {
             ex et ultricies bibendum.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey="3">
+        <Accordion.Item eventKey="3" className={``}>
           <Accordion.Header style={{ width: '95%' }}>
             What about other Chromium browsers?
           </Accordion.Header>
