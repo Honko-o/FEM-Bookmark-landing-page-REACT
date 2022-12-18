@@ -1,3 +1,4 @@
+import React from 'react';
 import { createPortal } from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons';
@@ -5,9 +6,9 @@ import logo_bookmark2 from '../../images/logo-bookmark2.svg';
 import close_icon from '../../images/icon-close.svg';
 import styles from './Menu.module.css';
 
-const Menu = ({ hideMenuHandler, className, style }) => {
+const Menu = React.forwardRef(({ hideMenuHandler, className, style }, ref) => {
   return createPortal(
-    <div id={styles.offcanvas} className={className} style={style}>
+    <div id={styles.offcanvas} className={className} style={style} ref={ref}>
       <div className="offcanvas_header pb-4">
         <div className="offcanvas_title d-flex justify-content-between">
           <img src={logo_bookmark2} alt="website logo" />
@@ -58,6 +59,6 @@ const Menu = ({ hideMenuHandler, className, style }) => {
     </div>,
     document.getElementById('modal')
   );
-};
+});
 
 export default Menu;

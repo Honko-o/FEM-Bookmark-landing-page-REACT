@@ -14,9 +14,9 @@ const transitionDuration = {
 };
 
 const transitionStyles = {
-  entering: { opacity: 0 },
+  entering: { opacity: 1 },
   entered: { opacity: 1 },
-  exiting: { opacity: 1 },
+  exiting: { opacity: 0 },
   exited: { opacity: 0 },
 };
 
@@ -69,15 +69,14 @@ function Header() {
         >
           {(state) => {
             console.log(state);
-            return showMenu ? (
+            return (
               <Menu
+                ref={nodeRef}
                 hideMenuHandler={hideMenuHandler}
-                showMenuHandler={showMenuHandler}
-                showMenu={showMenu}
                 className={`p-4 text-center`}
                 style={{ ...transitionStyles[state], ...transitionDuration }}
               />
-            ) : null;
+            );
           }}
         </Transition>
       </Container>
