@@ -1,13 +1,28 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import logoBookmark from '../../images/logo-bookmark.svg';
 import Menu from './Menu';
 import Nav from 'react-bootstrap/Nav';
 import CustomButton from '../Button/CustomButton';
+import { Transition } from 'react-transition-group';
+
+const duration = 500;
+
+const transitionDuration = {
+  transition: `opacity ${duration}ms ease-in-out`,
+};
+
+const transitionStyles = {
+  entering: { opacity: 0 },
+  entered: { opacity: 1 },
+  exiting: { opacity: 1 },
+  exited: { opacity: 0 },
+};
 
 function Header() {
   const [showMenu, setShowMenu] = useState(false);
+  const nodeRef = useRef(null);
 
   const showMenuHandler = () => {
     setShowMenu(true);
@@ -41,17 +56,30 @@ function Header() {
           </Nav.Link>
           <Nav.Link href="#" className="text-uppercase">
             <CustomButton type="login" className="px-4 py-2">
-              Contact
+              Login
             </CustomButton>
           </Nav.Link>
         </Nav>
-        {showMenu ? (
-          <Menu
-            hideMenuHandler={hideMenuHandler}
-            showMenuHandler={showMenuHandler}
-            showMenu={showMenu}
-          />
-        ) : null}
+        <Transition
+          nodeRef={nodeRef}
+          in={showMenu}
+          timeout={duration}
+          unmountOnExit
+          appear
+        >
+          {(state) => {
+            console.log(state);
+            return showMenu ? (
+              <Menu
+                hideMenuHandler={hideMenuHandler}
+                showMenuHandler={showMenuHandler}
+                showMenu={showMenu}
+                className={`p-4 text-center`}
+                style={{ ...transitionStyles[state], ...transitionDuration }}
+              />
+            ) : null;
+          }}
+        </Transition>
       </Container>
     </Navbar>
   );

@@ -7,7 +7,8 @@
   width: 100%;
   z-index: 1000;
   height: 100%;
-  transition: opacity 500ms;
+  opacity: 0;
+  /* transition: opacity 500ms; */
 }
 
 #offcanvas li:not(:last-child) a {
@@ -31,23 +32,4 @@
 .offcanvas_body li:not(:last-child) {
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
-}
-
-/* Show Hide Menu Transition */
-.menu-enter {
-  opacity: 0;
-}
-
-.menu-enter-active {
-  opacity: 1;
-  transition: opacity 200ms;
-}
-
-.menu-exit {
-  opacity: 1;
-}
-
-.menu-exit-active {
-  opacity: 0;
-  transition: opacity 200ms;
 }

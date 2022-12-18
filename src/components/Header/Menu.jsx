@@ -5,9 +5,9 @@ import logo_bookmark2 from '../../images/logo-bookmark2.svg';
 import close_icon from '../../images/icon-close.svg';
 import styles from './Menu.module.css';
 
-const Menu = ({ hideMenuHandler }) => {
+const Menu = ({ hideMenuHandler, className, style }) => {
   return createPortal(
-    <div id={styles.offcanvas} className="p-4 text-center">
+    <div id={styles.offcanvas} className={className} style={style}>
       <div className="offcanvas_header pb-4">
         <div className="offcanvas_title d-flex justify-content-between">
           <img src={logo_bookmark2} alt="website logo" />
